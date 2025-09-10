@@ -153,7 +153,7 @@ def etl_galaxies():
         )
         t_log.info("Galaxy data loaded into DuckDB.")
 
-    @task()
+    @task(outlets="analyze_galaxies")
     def print_loaded_galaxies(
         duckdb_instance_name: str = _DUCKDB_INSTANCE_NAME,
         table_name: str = _DUCKDB_TABLE_NAME,
