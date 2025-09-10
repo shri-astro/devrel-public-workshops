@@ -10,7 +10,7 @@ _DUCKDB_INSTANCE_NAME = os.getenv("DUCKDB_INSTANCE_NAME", "include/astronomy.db"
 _DUCKDB_TABLE_NAME = os.getenv("DUCKDB_TABLE_NAME", "galaxy_data")
 
 
-@asset()
+@asset(schedule=Asset("galaxy_data"))
 def analyze_galaxies(
    duckdb_instance_name: str = _DUCKDB_INSTANCE_NAME,
    table_name: str = _DUCKDB_TABLE_NAME,
