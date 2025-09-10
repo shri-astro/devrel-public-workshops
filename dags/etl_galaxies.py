@@ -38,7 +38,8 @@ _CLOSENESS_THRESHOLD_LY_PARAMETER_NAME = "closeness_threshold_light_years"
     doc_md=__doc__,
     default_args={
         "owner": "Astro",
-        "retries": 1,
+        "retries": 3,
+        "schedule": "@daily",
         "retry_delay": duration(seconds=30),
     },
     tags=["example", "ETL"],
